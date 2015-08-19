@@ -1,0 +1,19 @@
+{
+  "name": "spaza_shop",
+  "version": "0.0.0",
+  "description": "Nelisa web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Paul",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-handlebars": "^1.2.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}
