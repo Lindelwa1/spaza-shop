@@ -7,6 +7,7 @@ var mostPop = require('./mostPopularProducts');
 var catCaculation = require('./categoryCalculations');
 var mostProfCat = require('./mostProfitableCategory');
 var leastPopProd = require('./leastPopularProduct');
+var leastPopCategory = require('./leastPopularCategory')
 
  
 var app = express();
@@ -40,7 +41,7 @@ app.get('/mostPopular', function (req, res){
 app.get('/categories', function (req, res){
 	var CatCalcuMap = catCaculation.getSalesPerCatergory('./files/Nelisa Sales History.csv'); //
 	//console.log('............Pop' + popularProduct);
-	res.render('categoryCalculation', {product: CatCalcuMap}) //to evaluate the handlerbar template
+	res.render('CategoryCalculations', {product: CatCalcuMap}) //to evaluate the handlerbar template
 });
 
 app.get('/mostProfiCat', function (req, res){
@@ -53,6 +54,18 @@ app.get('/leastPopularProd', function (req, res){
 	var leastPopularCatMap = leastPopProd.getleastPopular('./files/Nelisa Sales History.csv'); //
 	//console.log('............Pop' + popularProduct);
 	res.render('leastPopularProducts', {product: leastPopularCatMap}) //to evaluate the handlerbar template
+});
+
+app.get('/leastPopularCat', function (req, res){
+	var leastPopularCatMap = leastPopularCat.getleastPopular('./files/Nelisa Sales History.csv'); //
+	//console.log('............Pop' + popularProduct);
+	res.render('leastPopularProducts', {product: leastPopularCatMap}) //to evaluate the handlerbar template
+});
+
+app.get('/leastPopularCategories', function (req, res){
+	var categoryMap = leastPopCategory.getleastCat('./files/Nelisa Sales History.csv'); //
+	//console.log('............Pop' + popularProduct);
+	res.render('leastPopularCategory', {product: categoryMap}) //to evaluate the handlerbar template
 });
 
 

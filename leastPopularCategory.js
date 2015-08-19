@@ -4,16 +4,18 @@ var leastPopularCategory = require('./categoryCalculations');
 
 var findleastPopularCategory = function ( fileName) {
 
-    var categoryMap = leastPopularCategory.getSalesPerCatergory(fileName);
+    var categoryMap = new leastPopularCategory.getSalesPerCatergory(fileName);
 
     //var expectedSalesPerCategory = {};
     var min = 328;
+    var leastCat ={};
+  
 
     for(var prop in categoryMap){
         var value = categoryMap[prop];
             if(min > categoryMap[prop]){
                 min = categoryMap[prop];
-                leastPopularCategory = {
+                 leastCat = {
                     name: prop,
                     amt: min
                     
@@ -23,11 +25,11 @@ var findleastPopularCategory = function ( fileName) {
 
   
     //console.log(mostPopularProducts);
-    return leastPopularCategory;
+    return leastCat;
 
 };
            
   exports.getleastCat = function(fileName){
-        var leastCategory = findleastPopularCategory(fileName);
-        return leastPopularCategory;
+        var Product = findleastPopularCategory(fileName);
+        return Product;
     };

@@ -2,7 +2,7 @@ var fs = require("fs");
 
 var productsSold = require('./productsSold');
 
-findcategoryCalculations = function ( fileName){
+var findcategoryCalculations = function ( fileName){
    
 
     var getCatergories = {
